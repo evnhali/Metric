@@ -1,11 +1,11 @@
 -- Get addon-global namespace
-local _, ns = ...
+local _, ns   = ...
 
 -- Localize globals
 local LibStub = LibStub
 
 -- Create addon with AceAddon
-local Metric = LibStub('AceAddon-3.0'):NewAddon('Metric',
+local Metric  = LibStub('AceAddon-3.0'):NewAddon('Metric',
                                                 --mixins
                                                 'AceBucket-3.0',
                                                 'AceComm-3.0',
@@ -27,5 +27,5 @@ Metric.SpellLib    = LibStub:GetLibrary('LibPlayerSpells-1.0')
 Metric.MediaLib    = LibStub:GetLibrary('LibSharedMedia-3.0')
 
 -- Share data with other Metric files
-ns.Util = {}       -- namespace for utility functions
+ns.Util   = {}       -- namespace for utility functions
 ns.Metric = Metric
