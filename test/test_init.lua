@@ -55,17 +55,51 @@ end
 function Tests.EmbedsExist(verbose)
 	local numberFailed = 0
 	for name, func in pairs(embeds) do
-		local pass = isEmbedded(name, func, verbose)
+		local pass   = isEmbedded(name, func, verbose)
 		numberFailed = numberFailed + (pass and 0 or 1)
 	end
 	Metric.Print(groupTestResult('embed', numberFailed))
 	return numberFailed == 0
 end
 
+local libs = {
+	-- Syntax: 'Name of Library' = 'Index of Library'
+	LibCompress     = 'CompressLib',
+	LibPlayerSpells = 'SpellLib',
+	LibSharedMedia  = 'MediaLib',
+	AceConfig       = 'ConfigLib',
+	AceGUI          = 'GUILib',
+	AceDB           = 'DBLib',
+	AceDBOptions    = 'DBOptLib',
+	AceLocale       = 'LocaleLib'
+}
+
+local function registerTestResult(name, pass)
+	return string.format('%s library registration %s.', name, (pass and 'successful' or 'failed'))
+end
+
+local function isRegistered(name, idx, verbose)
+	local pass = Util[idx] and type(Util[idx]) == 'table' and true
+	if verbose then
+		Metric.Print(registerTestResult(name, pass))
+	end
+	return pass
+end
+
+function Tests.LibsExist(verbose)
+	local numberFailed = 0
+	for name, func in pairs(libs) do
+		local pass   = isRegistered(name, func, verbose)
+		numberFailed = numberFailed + (pass and 0 or 1)
+	end
+	Metric.Print(groupTestResult('library registration', numberFailed))
+	return numberFailed == 0
+end
+
 function Util.TestSuite.TestInit(verbose)
 	local numberFailed = 0
 	for _, test in pairs(Tests) do
-		local pass = test(verbose)
+		local pass   = test(verbose)
 		numberFailed = numberFailed + (pass and 0 or 1)
 	end
 	Metric.Print(groupTestResult('initialization', numberFailed))
