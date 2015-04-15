@@ -4,5 +4,6 @@
 ## Version: 0.0.1
 ## Notes: Combat Meter
 ## SavedVariables: MetricDB
+## SavedVariablesPerCharacter: MetricPerCharacte
 
 embeds.xml
