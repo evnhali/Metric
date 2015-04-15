@@ -23,12 +23,12 @@ local Tests = {}
 -- List all embedded libraries here
 local embeds = {
 	-- Syntax: 'Name of Embedded Library' = 'Function Provided By Library'
-	'AceBucket'     = 'RegisterBucketEvent',
-	'AceComm'       = 'RegisterComm',
-	'AceEvent'      = 'RegisterEvent',
-	'AceHook'       = 'Hook',
-	'AceSerializer' = 'Serialize',
-	'AceTimer'      = 'ScheduleTimer'
+	AceBucket     = 'RegisterBucketEvent',
+	AceComm       = 'RegisterComm',
+	AceEvent      = 'RegisterEvent',
+	AceHook       = 'Hook',
+	AceSerializer = 'Serialize',
+	AceTimer      = 'ScheduleTimer'
 }
 
 local function embedTestResult(name, pass)
@@ -62,9 +62,9 @@ function Tests.EmbedsExist(verbose)
 	return numberFailed == 0
 end
 
-function UtilTestSuite.TestInit(verbose)
+function Util.TestSuite.TestInit(verbose)
 	local numberFailed = 0
-	for _, test in Tests do
+	for _, test in pairs(Tests) do
 		local pass = test(verbose)
 		numberFailed = numberFailed + (pass and 0 or 1)
 	end
