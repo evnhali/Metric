@@ -22,6 +22,7 @@ local Metric = LibStub('AceAddon-3.0'):NewAddon('Metric',
                                                 'AceTimer-3.0')
 ns.Metric = Metric
 
+-- Register non-mixin libraries
 Metric.CompressLib = LibStub:GetLibrary('LibCompress')
 Metric.SpellLib    = LibStub:GetLibrary('LibPlayerSpells-1.0')
 Metric.MediaLib    = LibStub:GetLibrary('LibSharedMedia-3.0')
