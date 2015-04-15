@@ -25,6 +25,7 @@ local Metric  = LibStub('AceAddon-3.0'):NewAddon('Metric',
 -- Create private namespace for shared utility functions and libraries
 local Private = {}
 Private.Lib   = {}
+Private.Utils = {}
 
 -- Initialize non-embeddable libraries
 Private.Lib.Compress = LibStub('LibCompress')
