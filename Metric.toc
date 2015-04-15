@@ -1,0 +1,8 @@
+## Interface: 60100
+## Title: Metric
+## Author: Kaels
+## Version: 0.0.1
+## Notes: Combat Meter
+## SavedVariables: MetricDB
+
+embeds.xml
