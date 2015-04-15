@@ -2,8 +2,7 @@
 	-- Registers with the AceAddon framework and obtains a public namespace.
 	-- Embeds embeddable libraries.
 	-- Creates a private namespace for utility functions.
-	-- Initializes non-embeddable libraries.
-	-- Creates Ace databases from saved variables files.
+	-- Initializes references to non-embeddable libraries.
 	-- Shares public and private namespaces with other Metric files.
 
 -- Get addon-global namespace
@@ -36,9 +35,6 @@ Private.Lib.GUI      = LibStub('AceGUI-3.0')
 Private.Lib.DB       = LibStub('AceDB-3.0')
 Private.Lib.DBOpt    = LibStub('AceDBOptions-3.0')
 Private.Lib.Locale   = LibStub('AceLocale-3.0')
-
--- Create databases
-
 
 -- Share data with other Metric files
 ns.Private = Private       
