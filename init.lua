@@ -27,4 +27,5 @@ Metric.SpellLib    = LibStub:GetLibrary('LibPlayerSpells-1.0')
 Metric.MediaLib    = LibStub:GetLibrary('LibSharedMedia-3.0')
 
 -- Share data with other Metric files
+ns.Util = {}       -- namespace for utility functions
 ns.Metric = Metric
