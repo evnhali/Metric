@@ -1,5 +1,8 @@
-.meteor/local
-.meteor/meteorite
+Ace3
+LibCompress
+LibPlayerSpells-1.0
+LibSharedMedia-3.0
+LibStub
 
 # =========================
 # Operating System Files
