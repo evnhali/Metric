@@ -3,16 +3,16 @@ local _, ns = ...
 
 -- Localize globals and addon-globals
 local Metric = ns.Metric
-local Util   = ns.Util
+local Private   = ns.Private
 
 -- Check if namespaces were initialized correctly
 assert(Metric, 'Metric namespace not found.')
-assert(Util, 'Util namespace not found.')
+assert(Private, 'Private namespace not found.')
 assert(Metric.Print, 'AceConsole embed failed - printing not available.')
 
 -- Initialize test suite
-Util.TestSuite = {}
-function Util:RunAllTests(verbose)
+Private.TestSuite = {}
+function Private:RunAllTests(verbose)
 	for _, test in pairs(self.TestSuite) do
 		test(verbose)
 	end
@@ -79,7 +79,7 @@ local function registerTestResult(name, pass)
 end
 
 local function isRegistered(name, idx, verbose)
-	local pass = Util[idx] and type(Util[idx]) == 'table' and true
+	local pass = Private[idx] and type(Private[idx]) == 'table' and true
 	if verbose then
 		Metric.Print(registerTestResult(name, pass))
 	end
@@ -96,7 +96,7 @@ function Tests.LibsExist(verbose)
 	return numberFailed == 0
 end
 
-function Util.TestSuite.TestInit(verbose)
+function Private.TestSuite.TestInit(verbose)
 	local numberFailed = 0
 	for _, test in pairs(Tests) do
 		local pass   = test(verbose)
