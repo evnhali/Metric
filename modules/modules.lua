@@ -19,17 +19,18 @@ end
 -- Basic class implementation.
 -- Accepts a list of Lua objects and returns a class that inherits from all of them in the order listed.
 function Private.Utils.NewClass(...)
+	local parents = { ... }
 	local class = {}
 	class.__index = class
 
-	for i = 1, #arg do
-		assert(type(arg[i]) == 'table', 'Invalid argument to NewClass.')
+	for i = 1, #parents do
+		assert(type(parents[i]) == 'table', 'Invalid argument to NewClass.')
 	end
 	
 	-- Inheritance
 	setmetatable(class, {
 		__index = function(t,k)
-			return search(k, arg)
+			return search(k, parents)
 		end
 	})
 
@@ -44,6 +45,8 @@ function Private.Utils.NewClass(...)
 	function class:inherit(obj)
 		arg[#arg + 1] = obj
 	end
+
+	return class
 end
 
 
@@ -54,5 +57,6 @@ Metric.Modules = {}
 function Metric:NewModule(name, ...)
 	assert(type(name) == 'string', 'Invalid argument to NewModule')
 	assert(not Metric.Modules[name], 'Module already exists: ' .. name)
-	Metric.Modules[name] = Private.Utils.NewClass(self, unpack(arg))
+	Metric.Modules[name] = Private.Utils.NewClass(self, ...)
+	return Metric.Modules[name]
 end
