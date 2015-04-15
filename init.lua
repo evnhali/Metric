@@ -8,7 +8,7 @@
 -- Get addon-global namespace
 local _, ns   = ...
 
--- Localize globals
+-- Localize variables
 local LibStub = LibStub
 
 -- Register with AceAddon

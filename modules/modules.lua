@@ -3,7 +3,7 @@
 -- Get addon-global namespace
 local _, ns = ...
 
--- Localize globals and addon-globals
+-- Localize variables
 local Metric, Private = ns.Metric, ns.Private
 local setmetatable, getmetatable = setmetatable, getmetatable
 

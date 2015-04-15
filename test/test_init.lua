@@ -1,7 +1,7 @@
 -- Get addon-global namespace
 local _, ns = ...
 
--- Localize globals and addon-globals
+-- Localize variables
 local Metric  = ns.Metric
 local Private = ns.Private
 
