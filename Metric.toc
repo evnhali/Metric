@@ -7,3 +7,5 @@
 ## SavedVariablesPerCharacter: MetricPerCharacte
 
 embeds.xml
+
+init.lua
