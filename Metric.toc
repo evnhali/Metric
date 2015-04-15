@@ -9,5 +9,6 @@
 libs.xml
 
 init.lua
+modules\modules.xml
 test\test.xml
 finalize.lua
