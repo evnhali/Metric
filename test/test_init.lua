@@ -64,14 +64,14 @@ end
 
 local libs = {
 	-- Syntax: 'Name of Library' = 'Index of Library'
-	LibCompress     = 'CompressLib',
-	LibPlayerSpells = 'SpellLib',
-	LibSharedMedia  = 'MediaLib',
-	AceConfig       = 'ConfigLib',
-	AceGUI          = 'GUILib',
-	AceDB           = 'DBLib',
-	AceDBOptions    = 'DBOptLib',
-	AceLocale       = 'LocaleLib'
+	LibCompress     = 'Compress',
+	LibPlayerSpells = 'Spell',
+	LibSharedMedia  = 'Media',
+	AceConfig       = 'Config',
+	AceGUI          = 'GUI',
+	AceDB           = 'DB',
+	AceDBOptions    = 'DBOpt',
+	AceLocale       = 'Locale'
 }
 
 local function registerTestResult(name, pass)
@@ -79,7 +79,7 @@ local function registerTestResult(name, pass)
 end
 
 local function isRegistered(name, idx, verbose)
-	local pass = Private[idx] and type(Private[idx]) == 'table' and true
+	local pass = Private.Lib[idx] and type(Private.Lib[idx]) == 'table' and true
 	if verbose then
 		Metric.Print(registerTestResult(name, pass))
 	end

@@ -24,17 +24,18 @@ local Metric  = LibStub('AceAddon-3.0'):NewAddon('Metric',
                                                 'AceTimer-3.0')
 
 -- Create private namespace for shared utility functions and libraries
-local Private    = {}
+local Private = {}
+Private.Lib   = {}
 
 -- Initialize non-embeddable libraries
-Private.CompressLib = LibStub('LibCompress')
-Private.SpellLib    = LibStub('LibPlayerSpells-1.0')
-Private.MediaLib    = LibStub('LibSharedMedia-3.0')
-Private.ConfigLib   = LibStub('AceConfig-3.0')
-Private.GUILib      = LibStub('AceGUI-3.0')
-Private.DBLib       = LibStub('AceDB-3.0')
-Private.DBOptLib    = LibStub('AceDBOptions-3.0')
-Private.LocaleLib   = LibStub('AceLocale-3.0')
+Private.Lib.Compress = LibStub('LibCompress')
+Private.Lib.Spell    = LibStub('LibPlayerSpells-1.0')
+Private.Lib.Media    = LibStub('LibSharedMedia-3.0')
+Private.Lib.Config   = LibStub('AceConfig-3.0')
+Private.Lib.GUI      = LibStub('AceGUI-3.0')
+Private.Lib.DB       = LibStub('AceDB-3.0')
+Private.Lib.DBOpt    = LibStub('AceDBOptions-3.0')
+Private.Lib.Locale   = LibStub('AceLocale-3.0')
 
 -- Create databases
 
