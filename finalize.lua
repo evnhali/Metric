@@ -7,6 +7,7 @@ local Util   = ns.Util
 
 function Metric:OnInitialize()
 	-- TODO: Write code to run when addon is loaded
+	Util:RunAllTests(true) --DEBUG
 end
 
 function Metric:OnEnable()
