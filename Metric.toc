@@ -6,7 +6,7 @@
 ## SavedVariables: MetricDB
 ## SavedVariablesPerCharacter: MetricPerCharacte
 
-embeds.xml
+libs.xml
 
 init.lua
 finalize.lua
