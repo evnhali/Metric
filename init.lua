@@ -40,5 +40,5 @@ Private.LocaleLib   = LibStub('AceLocale-3.0')
 
 
 -- Share data with other Metric files
-ns.Private   = Private       
-ns.Metric = Metric
+ns.Private = Private       
+ns.Metric  = Metric

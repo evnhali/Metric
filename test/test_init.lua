@@ -2,8 +2,8 @@
 local _, ns = ...
 
 -- Localize globals and addon-globals
-local Metric = ns.Metric
-local Private   = ns.Private
+local Metric  = ns.Metric
+local Private = ns.Private
 
 -- Check if namespaces were initialized correctly
 assert(Metric, 'Metric namespace not found.')

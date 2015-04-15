@@ -2,12 +2,12 @@
 local _, ns = ...
 
 -- Localize globals and addon-globals
-local Metric = ns.Metric
-local Util   = ns.Util
+local Metric  = ns.Metric
+local Private = ns.Private
 
 function Metric:OnInitialize()
 	-- TODO: Write code to run when addon is loaded
-	Util:RunAllTests(true) --DEBUG
+	Private:RunAllTests(true) --DEBUG
 end
 
 function Metric:OnEnable()
