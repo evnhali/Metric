@@ -9,3 +9,4 @@
 embeds.xml
 
 init.lua
+finalize.lua
