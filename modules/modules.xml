@@ -1,5 +1,6 @@
 <Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
-  <Script file="modules.lua"/>
+  <Script file="module.lua"/>
+  <Script file="class.lua"/>
   <Include file="settings\settings.xml"/>
   <Include file="data\data.xml"/>
   <Include file="analysis\analysis.xml"/>

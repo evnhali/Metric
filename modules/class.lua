@@ -1,11 +1,11 @@
--- Loosely OOP implementation of modules.
+-- Basic class implementation
 
 -- Get addon-global namespace
 local _, ns = ...
 
 -- Localize variables
 local Metric, Private = ns.Metric, ns.Private
-local setmetatable, getmetatable = setmetatable, getmetatable
+local setmetatable = setmetatable
 
 -- Search function for multiple inheritance
 local function search(key, parents)
@@ -47,16 +47,4 @@ function Private.Utils.NewClass(...)
 	end
 
 	return class
-end
-
-
--- Create namespace for modules
-Metric.Modules = {}
-
--- Modules implemented as classes
-function Metric:NewModule(name, ...)
-	assert(type(name) == 'string', 'Invalid argument to NewModule')
-	assert(not Metric.Modules[name], 'Module already exists: ' .. name)
-	Metric.Modules[name] = Private.Utils.NewClass(self, ...)
-	return Metric.Modules[name]
 end
