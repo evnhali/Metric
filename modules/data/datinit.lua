@@ -9,6 +9,5 @@ local Metric, Private = ns.Metric, ns.Private
 local Data = Metric:NewModule('Data')
 
 function Data:init()
-	local db = Private.Lib.DB:New('MetricPerCharacterDB')
-	Data:inherit(db)
+	Data.db = Private.Lib.DB:New('MetricPerCharacterDB')
 end

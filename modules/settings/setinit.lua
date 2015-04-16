@@ -15,6 +15,5 @@ local defaults = {
 local Settings = Metric:NewModule('Settings')
 
 function Settings:init()
-	local db = Private.Lib.DB:New('MetricDB', defaults, true)
-	Settings:inherit(db)
+	Settings.db = Private.Lib.DB:New('MetricDB', defaults, true)
 end
