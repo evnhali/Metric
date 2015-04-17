@@ -41,10 +41,5 @@ function Private.Utils.NewClass(...)
 		return obj
 	end
 
-	-- Add Inheritance
-	function class:inherit(obj)
-		arg[#arg + 1] = obj
-	end
-
 	return class
 end
