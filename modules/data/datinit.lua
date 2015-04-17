@@ -1,4 +1,4 @@
--- Persistent settings.
+-- Data collection.
 
 -- Get addon-global namespace
 local _, ns = ...
