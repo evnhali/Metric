@@ -15,4 +15,4 @@ local function printEvent(event, ...)
 	end
 end
 
-data:RegisterEvent('COMBAT_LOG_EVENT_UNFILTERED', printEvent)
+Data:RegisterEvent('COMBAT_LOG_EVENT_UNFILTERED', printEvent)
