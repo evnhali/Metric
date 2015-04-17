@@ -11,13 +11,22 @@ local setmetatable = setmetatable
 Metric.__index = Metric
 
 -- Create namespace for modules
-Metric.Modules = {}
+Metric._modules = {}
 
--- Modules implemented as classes
+-- Module constructor. Modules inherit from the object on which the constructor is called.
 function Metric:NewModule(name)
 	assert(type(name) == 'string', 'Invalid argument to NewModule')
-	assert(not Metric.Modules[name], string.format('Module already exists: %s'), name)
-	Metric.Modules[name] = {}
-	setmetatable(Metric.Modules[name], Metric)
-	return Metric.Modules[name]
+	assert(not self._modules[name], string.format('Error in NewModule: Module already exists: %s'), name)
+	local mod = {}
+	mod.__index = mod
+	mod._modules = {}
+	setmetatable(mod, self)
+	self._modules[name] = mod
+	return mod
+end
+
+function Metric:GetModule(name)
+	assert(type(name) == 'string', 'Invalid argument to GetModule')
+	assert(self._modules[name], string.format('Error in GetModule: Module does not exist: %s'), name)
+	return self._modules[name]
 end
