@@ -16,7 +16,7 @@ Metric.Modules = {}
 -- Modules implemented as classes
 function Metric:NewModule(name)
 	assert(type(name) == 'string', 'Invalid argument to NewModule')
-	assert(not Metric.Modules[name], 'Module already exists: ' .. name)
+	assert(not Metric.Modules[name], string.format('Module already exists: %s'), name)
 	Metric.Modules[name] = {}
 	setmetatable(Metric.Modules[name], Metric)
 	return Metric.Modules[name]
